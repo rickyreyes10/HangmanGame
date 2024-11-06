@@ -177,3 +177,59 @@ input {
     margin-bottom: 20px;
     border-radius: 10px;
 }
+
+/*show modal when checkbox is checked*/
+.modal-toggle:checked+.modal {
+    display: flex;
+}
+
+/*styling for start-game.php*/
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    margin-top: 70px;
+}
+
+form label {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.4em;
+    cursor: pointer;
+    padding: 15px 30px;
+    background-color: rgba(30, 136, 229, 0.2);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+form label:hover {
+    background-color: rgba(30, 136, 229, 0.4);
+    transform: translateX(7px);
+}
+
+form input[type="radio"] {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ffd700;
+    border-radius: 50%;
+    margin-right: 10px;
+    position: relative;
+    appearance: none;
+}
+
+form input[type="radio"]:checked {
+    background-color: #ffd700;
+    border-color: #fff;
+}
+
+form .start-button {
+    margin-top: 20px;
+    align-self: center;
+    min-width: 200px;
+}
