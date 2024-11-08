@@ -131,3 +131,109 @@ if ($incorrect_guesses === 1) {
 
 
 ?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Game Interface - Pirate Hangman</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <h1>Round <?php echo $_SESSION['round']; ?></h1>
+            <nav>
+                <div>Difficulty: <?php echo ucfirst($_SESSION['difficulty']); ?></div>
+            </nav>
+        </header>
+        <main>
+            <div class="game-container">
+                <div class="hangman-container"> 
+                    <img src="images/<?php echo htmlspecialchars($hangman_image); ?>" alt="Hangman" class="hangman-image">
+                </div>
+<!--other game elements will go here-->
+                <div class="game-content"> 
+                    <?php 
+                    error_reporting(0);
+                    //get current word data (based on round)
+                    $current_round = $_SESSION['round'] - 1; //array is 0-based
+                    $current_word_data = $_SESSION['words'][$current_round];
+
+                    //initialize guessed letters array if not exists
+                    if (!isset($_SESSION['guessed_letters'])){
+                        $_SESSION['guessed_letters'] = array();
+                    }
+                    ?>
+
+                    <!--add word display container-->
+                    <div class="word-display"> 
+                        <?php
+                        $word = strtoupper($current_word_data['word']); //convert to uppercase to match keyboard
+                        $letters = str_split($word); //split word into array of letters
+
+                        foreach ($letters as $letter) {
+                            $display_class = in_array($letter, $_SESSION['guessed_letters']) ? 'revealed' : 'hidden';
+                            echo "<span class='letter $display_class'>";
+                            echo in_array($letter, $_SESSION['guessed_letters']) ? $letter : '_';
+                            echo "</span>";
+                        }
+                        ?>
+                    </div>
+
+                    <!--display hint-->
+                    <div class="hint-container">
+                        <p class="hint-text">Hint: <?php echo htmlspecialchars($current_word_data['hint']);?></p>
+                    </div>
+
+                    <!--display keyboard--> 
+                    <div class="keyboard">
+                        <?php 
+                        error_reporting(0);
+                        $letters = range('A', 'Z');
+                        foreach ($letters as $letter) {
+                            $is_guessed = in_array($letter, $_SESSION['guessed_letters']);
+        echo "<form method='POST' action='game-interface.php' style='display: inline;'>";
+        echo "<button type='submit' name='letter' value='$letter' 
+              class='key-button" . ($is_guessed ? " guessed" : "") . "' 
+              " . ($is_guessed ? "disabled" : "") . ">";
+        echo $letter;
+        echo "</button>";
+        echo "</form>";
+                        }
+                        ?>
+
+                    </div>
+                </div>
+                    
+            </div>
+
+        </main>
+
+        <?php
+        error_reporting(0);
+         if (isset($_SESSION['show_end_modal']) && $_SESSION['show_end_modal']): ?>
+    <input type="checkbox" id="modal-toggle" class="modal-toggle" checked>
+    <div class="modal">
+        <div class="modal-content">
+            <h2><?php echo $_SESSION['end_game_data']['message']; ?></h2>
+            <div class="game-stats">
+                <p>Rounds Won: <?php echo $_SESSION['end_game_data']['round_won']; ?>/6</p>
+                <p>Game Score: <?php echo $_SESSION['end_game_data']['score']; ?> points</p>
+                <p>Total Score: <?php echo $_SESSION['end_game_data']['cumulative_score']; ?> points</p>
+            </div>
+            <img src="images/wink.webp" alt="pirate-wink" class="pirate-gif">
+            <div class="modal-buttons"> 
+                <a href="start-game.php" class="start-button">Play Again</a>
+                <a href="home.php" class="home-button">Home</a>
+            </div>
+            
+        </div>
+    </div>
+<?php endif; ?>
+
+        
+    </body>
+
+</html>
