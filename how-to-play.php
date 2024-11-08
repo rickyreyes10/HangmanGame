@@ -33,6 +33,13 @@
             border-radius: 5px;
         }
 
+        .tutorial-step img[src*="difficulty-select"],
+        .tutorial-step img[src*="end-game"] {
+            max-width: 70%;
+            display: block;
+            margin: 20px auto;
+        }
+
         .tutorial-step h2,
         .tutorial-step p,
         .tutorial-step ul,
@@ -79,6 +86,14 @@
             list-style-type: none;
             padding-left: 0;
         }
+
+        .tutorial-step ul.game-interface-list {
+            list-style-type: disc;
+            padding-left: 20px;
+            text-align: left;
+            width: fit-content;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
@@ -101,7 +116,7 @@
         <div class="tutorial-step">
             <h2>Step 2: Game Interface</h2>
             <p>The game consists of:</p>
-            <ul>
+            <ul class="game-interface-list">
                 <li>A hangman image that updates with each incorrect guess</li>
                 <li>The mystery word shown as underscores (_)</li>
                 <li>A helpful hint about the word</li>
@@ -113,15 +128,11 @@
         <div class="tutorial-step">
             <h2>Step 3: Making Guesses</h2>
             <p>Click letters on the keyboard to make your guess:</p>
-            <div class="demo-keyboard">
-                <span class="demo-key correct">R</span>
-                <span class="demo-key incorrect">X</span>
-                <span class="demo-key">A</span>
-            </div>
             <ul>
                 <li><strong>Correct guess:</strong> The letter appears in the word</li>
                 <li><strong>Incorrect guess:</strong> The hangman image progresses; used letters become disabled</li>
             </ul>
+            <img src="images/tutorial/make-guess.png" alt="Make Guess" />
         </div>
 
         <div class="tutorial-step">
