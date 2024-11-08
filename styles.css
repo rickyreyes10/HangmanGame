@@ -140,12 +140,12 @@ input {
     display: none;
 }
 
+/* General modal styling */
 .modal {
     display: none;
     position: fixed;
     padding: 20px;
     overflow: hidden;
-    /*prevent body scrolling when modal is open*/
     top: 0;
     left: 0;
     width: 100%;
@@ -163,9 +163,7 @@ input {
     width: 80%;
     max-width: 600px;
     max-height: 90vh;
-    /*limit height to 90% of viewport height*/
     overflow-y: auto;
-    /*make content scrollable if it exceeds max-height*/
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     text-align: center;
     color: #333;
@@ -453,15 +451,19 @@ header nav div {
 }
 
 .modal-content h2 {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-image: url('images/cartoon-landscape-tropical-seashore.jpg'); /* Set the image as the background */
+    background-size: cover; /* Ensure the image covers the entire area */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
     border-radius: 10px;
     padding: 20px;
-    color: #ffd700;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    color: #ffd700; /* Gold text */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Shadow to make text stand out */
     margin-bottom: 20px;
     font-size: 2.5em;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.53);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.53); /* Box shadow for the h2 */
 }
+
 
 .modal-buttons {
     display: flex;
@@ -493,4 +495,43 @@ header nav div {
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     color: #bababa
+}
+/* Custom styling for leaderboard table inside the modal */
+#leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#leaderboard-table th,
+#leaderboard-table td {
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+#leaderboard-table th {
+    background-color: #1a6eb7; /* Blue color */
+    color: #ffd700; /* Yellow text */
+    font-weight: bold;
+}
+
+#leaderboard-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#leaderboard-table tr:hover {
+    background-color: #e6f7ff;
+}
+
+#leaderboard-table td {
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* Adding some styles for modal headers */
+#leaderboard-modal-content h2 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 20px;
 }

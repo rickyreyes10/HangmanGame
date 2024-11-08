@@ -6,7 +6,6 @@
     <title>Pirate Hangman</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
     <!--header section-->
     <header>
@@ -33,24 +32,44 @@
         <label for="privacy-modal" class="modal-button">Privacy</label>
     </footer>
 
-    <!--modal structure-->
+   <!--leaderboard modal-->
+<input type="checkbox" id="leaderboard-modal" class="modal-toggle">
+<div class="modal">
+    <div class="modal-content">
+        <label for="leaderboard-modal" class="close-button">&times;</label>
+        <h2>Leaderboard</h2>
 
-    <!--leaderboard modal-->
-    <input type="checkbox" id="leaderboard-modal" class="modal-toggle">
-    <div class="modal">
-        <div class="modal-content">
-            <label for="leaderboard-modal" class="close-button">&times;</label>
-            <h2>Leaderboard</h2>
-            <?php
-            // Check if the cumulative_score cookie is set
-            if (isset($_COOKIE['cumulative_score'])) {
-                echo "<p>Your Cumulative Score: " . htmlspecialchars($_COOKIE['cumulative_score']) . " points</p>";
-            } else {
-                echo "<p>No scores available yet. Play the game to earn points!</p>";
+        <?php
+        // Check if user ID and cumulative score cookies are set
+        if (isset($_COOKIE['user_id']) && isset($_COOKIE['cumulative_score'])) {
+            $user_id = $_COOKIE['user_id'];
+            $cumulative_score = (int)$_COOKIE['cumulative_score'];
+
+            // Simulate leaderboard data with current user's cookie data
+            $leaderboard = [
+                ["rank" => 1, "id" => $user_id, "score" => $cumulative_score],
+            ];
+
+            // Display leaderboard in a table format
+            echo "<table id='leaderboard-table'>";
+            echo "<tr><th>Rank</th><th>Name</th><th>Score</th></tr>";
+
+            foreach ($leaderboard as $entry) {
+                echo "<tr>";
+                echo "<td>" . $entry['rank'] . "</td>";
+                echo "<td>" . htmlspecialchars($entry['id']) . "</td>";
+                echo "<td>" . htmlspecialchars($entry['score']) . "</td>";
+                echo "</tr>";
             }
-            ?>
-        </div>
+
+            echo "</table>";
+        } else {
+            echo "<p>No leaderboard data available. Start a game to record your score!</p>";
+        }
+        ?>
     </div>
+</div>
+
 
     <!--credits modal-->
     <input type="checkbox" id="credits-modal" class="modal-toggle">
