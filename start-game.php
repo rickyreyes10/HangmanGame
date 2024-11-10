@@ -61,7 +61,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     $_SESSION['words'] = $gameWords; //words and hints for the game
     $_SESSION['difficulty'] = $difficulty;
     $_SESSION['round'] = 1; //start with round 1
-    $_SESSION['round_wins'] = 0; 
+    $_SESSION['round_wins'] = 0;
     $_SESSION['round_losses'] = 0;
     $_SESSION['score'] = 0;
     $_SESSION['incorrect_guesses'] = 0;
@@ -116,7 +116,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
             </form>
             <a href="home.php" class="home-button" style="margin-top: 40px;">Home</a>
         </section>
-        
+
     </main>
 </body>
 </html>

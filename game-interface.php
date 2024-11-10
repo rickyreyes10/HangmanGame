@@ -71,7 +71,7 @@ function startNewRound() {
 
 //function to show end game modal
 function showEndGameModal() {
-    //calculate final score 
+    //calculate final score
     if ($_SESSION['round_wins'] <= 2) {
         $_SESSION['score'] = 0; //lose (0-2 rounds won only)
         $result_message = "Better luck next time!";
@@ -84,8 +84,8 @@ function showEndGameModal() {
     }
 
     //update cumulative score
-    $new_cumulative_score = isset($_COOKIE['cumulative_score']) ? 
-        (int)$_COOKIE['cumulative_score'] + $_SESSION['score'] : 
+    $new_cumulative_score = isset($_COOKIE['cumulative_score']) ?
+        (int)$_COOKIE['cumulative_score'] + $_SESSION['score'] :
         $_SESSION['score'];
     setcookie('cumulative_score', $new_cumulative_score, time() + (86400 * 30)); //30 days
 
@@ -108,7 +108,7 @@ function showEndGameModal() {
     $_SESSION['score'] = 0;
     $_SESSION['incorrect_guesses'] = 0;
     $_SESSION['guessed_letters'] = [];
-    
+
 }
 
 
@@ -150,12 +150,12 @@ if ($incorrect_guesses === 1) {
         </header>
         <main>
             <div class="game-container">
-                <div class="hangman-container"> 
+                <div class="hangman-container">
                     <img src="images/<?php echo htmlspecialchars($hangman_image); ?>" alt="Hangman" class="hangman-image">
                 </div>
 <!--other game elements will go here-->
-                <div class="game-content"> 
-                    <?php 
+                <div class="game-content">
+                    <?php
                     error_reporting(0);
                     //get current word data (based on round)
                     $current_round = $_SESSION['round'] - 1; //array is 0-based
@@ -168,7 +168,7 @@ if ($incorrect_guesses === 1) {
                     ?>
 
                     <!--add word display container-->
-                    <div class="word-display"> 
+                    <div class="word-display">
                         <?php
                         $word = strtoupper($current_word_data['word']); //convert to uppercase to match keyboard
                         $letters = str_split($word); //split word into array of letters
@@ -187,16 +187,16 @@ if ($incorrect_guesses === 1) {
                         <p class="hint-text">Hint: <?php echo htmlspecialchars($current_word_data['hint']);?></p>
                     </div>
 
-                    <!--display keyboard--> 
+                    <!--display keyboard-->
                     <div class="keyboard">
-                        <?php 
+                        <?php
                         error_reporting(0);
                         $letters = range('A', 'Z');
                         foreach ($letters as $letter) {
                             $is_guessed = in_array($letter, $_SESSION['guessed_letters']);
         echo "<form method='POST' action='game-interface.php' style='display: inline;'>";
-        echo "<button type='submit' name='letter' value='$letter' 
-              class='key-button" . ($is_guessed ? " guessed" : "") . "' 
+        echo "<button type='submit' name='letter' value='$letter'
+              class='key-button" . ($is_guessed ? " guessed" : "") . "'
               " . ($is_guessed ? "disabled" : "") . ">";
         echo $letter;
         echo "</button>";
@@ -206,7 +206,7 @@ if ($incorrect_guesses === 1) {
 
                     </div>
                 </div>
-                    
+
             </div>
 
         </main>
@@ -224,16 +224,16 @@ if ($incorrect_guesses === 1) {
                 <p>Total Score: <?php echo $_SESSION['end_game_data']['cumulative_score']; ?> points</p>
             </div>
             <img src="images/wink.webp" alt="pirate-wink" class="pirate-gif">
-            <div class="modal-buttons"> 
+            <div class="modal-buttons">
                 <a href="start-game.php" class="start-button">Play Again</a>
                 <a href="home.php" class="home-button">Home</a>
             </div>
-            
+
         </div>
     </div>
 <?php endif; ?>
 
-        
+
     </body>
 
 </html>

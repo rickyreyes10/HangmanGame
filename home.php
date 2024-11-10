@@ -72,24 +72,47 @@
 
 
     <!--credits modal-->
-    <input type="checkbox" id="credits-modal" class="modal-toggle">
-    <div class="modal">
-        <div class="modal-content">
-            <label for="credits-modal" class="close-button">&times;</label>
-            <h2>Credits</h2>
-            <p>Developed by Team....</p>
+<input type="checkbox" id="credits-modal" class="modal-toggle">
+<div class="modal">
+    <div class="modal-content">
+        <label for="credits-modal" class="close-button">&times;</label>
+        <h2>Credits</h2>
+        <div class="credits-list-wrapper">
+            <ul class="credits-list">
+                <li>Dio Briggs</li>
+                <li>Ricky Reyes</li>
+                <li>Peter Kim</li>
+                <li>Group 2</li>
+                <li>Louis Henry</li>
+            </ul>
         </div>
     </div>
+</div>
+
 
     <!--privacy policy modal-->
     <input type="checkbox" id="privacy-modal" class="modal-toggle">
-    <div class="modal">
-        <div class="modal-content">
-            <label for="privacy-modal" class="close-button">&times;</label>
-            <h2>Privacy Policy</h2>
-            <p>Your privacy is important to us. No personal data is collected....</p>
+        <div class="modal">
+            <div class="modal-content">
+                <label for="privacy-modal" class="close-button">&times;</label>
+                <h2>Privacy Policy</h2>
+                <div class="privacy-policy-wrapper">
+                <p class="privacy-policy-text">
+                We value your privacy. When you use Pirate Hangman,
+                we collect minimal personal data to enhance your gameplay experience.
+                This includes your user ID, cumulative score, and game progress,
+                which are stored securely. We do not share your data with third parties,
+                except where necessary for the operation of the game or as required by law.
+                By using our game, you agree to the collection and use of this information in
+                accordance with this privacy policy.
+                You can opt-out or delete your data by contacting our support team at any time.
+                We are committed to protecting your privacy and ensuring a safe and enjoyable
+                gaming experience.
+                </p>
+            </div>
         </div>
     </div>
+
 
     <!--contact info modal-->
     <input type="checkbox" id="contact-modal" class="modal-toggle">
@@ -97,9 +120,17 @@
         <div class="modal-content">
             <label for="contact-modal" class="close-button">&times;</label>
             <h2>Contact Info</h2>
-            <p>Email: support@piratehangman.com</p>
+            <div class="contact-list-wrapper">
+                <ul class="contact-list">
+                    <li>Email: support@piratehangman.com</li>
+                    <li>Email: dbriggs6@student.gsu.edu</li>
+                    <li>Email: rreyespena1@student.gsu.edu</li>
+                    <li>Email: pkim35@student.gsu.edu</li>
+                </ul>
+            </div>
         </div>
     </div>
+
 
 </body>
 </html>

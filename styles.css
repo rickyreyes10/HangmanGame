@@ -136,7 +136,7 @@ footer {
 
 }
 
-input {
+input[type="checkbox"] {
     display: none;
 }
 
@@ -171,7 +171,7 @@ input {
     overflow-y: auto;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     text-align: center;
-    color: #333;
+    color: #FFD700;
     position: relative;
 }
 
@@ -543,4 +543,106 @@ header nav div {
     color: #333;
     font-size: 1.5em;
     margin-bottom: 20px;
+}
+
+.credits-list-wrapper {
+    max-height: 300px; /* Set the height for the scrolling area */
+    overflow-y: hidden; /* Hide overflow initially */
+    margin-top: 10px;
+}
+
+.credits-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    animation: scrollCredits 20s linear infinite; /* Animation for scrolling the list */
+}
+
+.credits-list li {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #FFD700;
+}
+
+/* Animation for scrolling credits list */
+@keyframes scrollCredits {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+/* When the modal is checked, trigger the animation */
+input[type="checkbox"]:checked + .modal .modal-content .credits-list-wrapper {
+    overflow-y: auto; /* Allow scroll when the modal is opened */
+}
+
+.contact-list-wrapper {
+    max-height: 300px; /* Set the height for the scrolling area */
+    overflow-y: hidden; /* Hide overflow initially */
+    margin-top: 10px;
+}
+
+.contact-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    animation: scrollContacts 20s linear infinite; /* Animation for scrolling the list */
+}
+
+.contact-list li {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #FFD700;
+}
+
+.contact-list a {
+    color: #1e90ff; /* Style links with a different color */
+    text-decoration: none;
+}
+
+/* Animation for scrolling contact list */
+@keyframes scrollContacts {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+/* When the modal is checked, trigger the animation */
+input[type="checkbox"]:checked + .modal .modal-content .contact-list-wrapper {
+    overflow-y: auto; /* Allow scroll when the modal is opened */
+}
+
+.privacy-policy-wrapper {
+    max-height: 300px; /* Set the height for the scrolling area */
+    overflow-y: hidden; /* Hide overflow initially */
+    margin-top: 10px;
+}
+
+.privacy-policy-text {
+    margin: 0;
+    font-size: 18px;
+    color: #FFD700;
+    line-height: 1.6;
+    animation: scrollPrivacy 20s linear infinite; /* Animation for scrolling the paragraph */
+}
+
+/* Animation for scrolling the privacy policy */
+@keyframes scrollPrivacy {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+/* When the modal is checked, trigger the animation */
+input[type="checkbox"]:checked + .modal .modal-content .privacy-policy-wrapper {
+    overflow-y: auto; /* Allow scroll when the modal is opened */
 }
