@@ -158,8 +158,10 @@ input {
 
 .modal-content {
     background-image: url('images/cartoon-landscape-tropical-seashore.jpg');
-    background-size: cover; /* Ensures the image covers the entire modal */
-    background-position: center; /* Centers the image within the modal */
+    background-size: cover;
+    /* Ensures the image covers the entire modal */
+    background-position: center;
+    /* Centers the image within the modal */
     padding: 30px;
     border-radius: 15px;
     width: 80%;
@@ -178,7 +180,7 @@ input {
     right: 20px;
     font-size: 1.5em;
     cursor: pointer;
-    color: #333;
+    color: red;
 }
 
 .pirate-gif {
@@ -498,6 +500,7 @@ header nav div {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     color: #bababa
 }
+
 /* Custom styling for leaderboard table inside the modal */
 #leaderboard-table {
     width: 100%;
@@ -513,8 +516,10 @@ header nav div {
 }
 
 #leaderboard-table th {
-    background-color: #1a6eb7; /* Blue color */
-    color: #ffd700; /* Yellow text */
+    background-color: #1a6eb7;
+    /* Blue color */
+    color: #ffd700;
+    /* Yellow text */
     font-weight: bold;
 }
 
