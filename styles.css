@@ -1,5 +1,5 @@
 body {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
         /*linear gradient to darken the image*/
         url('images/cartoon-landscape-tropical-seashore.jpg');
     background-size: cover;
@@ -157,7 +157,8 @@ input {
 }
 
 .modal-content {
-    background-image: url('images/cartoon-landscape-tropical-seashore.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
+        url('images/cartoon-landscape-tropical-seashore.jpg');
     background-size: cover;
     /* Ensures the image covers the entire modal */
     background-position: center;
@@ -455,14 +456,15 @@ header nav div {
 }
 
 .modal-content h2 {
-    background-image: url('images/sand.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)),
+        url('images/sand.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 10px;
     padding: 20px;
-    color: white;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    color: #f0f0f0;
+    text-shadow: 2px 2px 4px black;
     margin-bottom: 20px;
     font-size: 2.5em;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.53);
