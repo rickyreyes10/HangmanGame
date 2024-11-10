@@ -589,7 +589,6 @@ input[type="checkbox"]:checked + .modal .modal-content .credits-list-wrapper {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    animation: scrollContacts 20s linear infinite; /* Animation for scrolling the list */
 }
 
 .contact-list li {
@@ -603,15 +602,7 @@ input[type="checkbox"]:checked + .modal .modal-content .credits-list-wrapper {
     text-decoration: none;
 }
 
-/* Animation for scrolling contact list */
-@keyframes scrollContacts {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-100%);
-    }
-}
+
 
 /* When the modal is checked, trigger the animation */
 input[type="checkbox"]:checked + .modal .modal-content .contact-list-wrapper {
