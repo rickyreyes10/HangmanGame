@@ -99,13 +99,8 @@
                 <div class="privacy-policy-wrapper">
                 <p class="privacy-policy-text">
                 We value your privacy. When you use Pirate Hangman,
-                we collect minimal personal data to enhance your gameplay experience.
-                This includes your user ID, cumulative score, and game progress,
-                which are stored securely. We do not share your data with third parties,
-                except where necessary for the operation of the game or as required by law.
-                By using our game, you agree to the collection and use of this information in
-                accordance with this privacy policy.
-                You can opt-out or delete your data by contacting our support team at any time.
+                we collect minimal personal data which includes your user ID,
+                cumulative score, and game progress. We do not share your data with third parties.
                 We are committed to protecting your privacy and ensuring a safe and enjoyable
                 gaming experience.
                 </p>

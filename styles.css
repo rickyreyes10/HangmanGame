@@ -629,7 +629,7 @@ input[type="checkbox"]:checked + .modal .modal-content .contact-list-wrapper {
     font-size: 18px;
     color: #FFD700;
     line-height: 1.6;
-    animation: scrollPrivacy 20s linear infinite; /* Animation for scrolling the paragraph */
+    animation: scrollPrivacy 60s linear infinite; /* Animation for scrolling the paragraph */
 }
 
 /* Animation for scrolling the privacy policy */
