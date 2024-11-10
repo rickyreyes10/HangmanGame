@@ -597,18 +597,6 @@ input[type="checkbox"]:checked + .modal .modal-content .credits-list-wrapper {
     color: #FFD700;
 }
 
-.contact-list a {
-    color: #1e90ff; /* Style links with a different color */
-    text-decoration: none;
-}
-
-
-
-/* When the modal is checked, trigger the animation */
-input[type="checkbox"]:checked + .modal .modal-content .contact-list-wrapper {
-    overflow-y: auto; /* Allow scroll when the modal is opened */
-}
-
 .privacy-policy-wrapper {
     max-height: 300px; /* Set the height for the scrolling area */
     overflow-y: hidden; /* Hide overflow initially */
